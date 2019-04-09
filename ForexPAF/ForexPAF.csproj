@@ -1,0 +1,165 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9D6A686B-AF3F-4C2F-B473-A830B108E7FE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ForexPAF</RootNamespace>
+    <AssemblyName>ForexPAF</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>..\obj\$(MSBuildProjectName)\$(Configuration)</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <IntermediateOutputPath>..\obj\$(MSBuildProjectName)\$(Configuration)</IntermediateOutputPath>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>AppIcon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CsvLoader.cs" />
+    <Compile Include="CsvMT4.cs" />
+    <Compile Include="CsvMT5.cs" />
+    <Compile Include="CsvStandard.cs" />
+    <Compile Include="ICsvLoader.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="MA.cs" />
+    <Compile Include="MACH.cs" />
+    <Compile Include="MADlg.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MADlg.Designer.cs">
+      <DependentUpon>MADlg.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectColor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectColor.Designer.cs">
+      <DependentUpon>SelectColor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectFile.Designer.cs">
+      <DependentUpon>SelectFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemMenu.cs" />
+    <Compile Include="ToolStripNumericUpDown.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Version.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Version.Designer.cs">
+      <DependentUpon>Version.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="MADlg.resx">
+      <DependentUpon>MADlg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectColor.resx">
+      <DependentUpon>SelectColor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectFile.resx">
+      <DependentUpon>SelectFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Version.resx">
+      <DependentUpon>Version.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Resource\ForexPAF.docx" />
+    <None Include="Resource\PointAndFigure.xlsx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MarketDataSeries\MarketDataSeries.csproj">
+      <Project>{7f630df9-5f75-488a-8026-4b56b535ebbc}</Project>
+      <Name>MarketDataSeries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PFChartCtrl\PFChartCtrl.csproj">
+      <Project>{186df04a-3c25-4b80-a939-26e410615f84}</Project>
+      <Name>PFChartCtrl</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppIcon.ico" />
+    <Content Include="Resource\Windows8.1-42.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy C:\AlgoWorker\MarketChartCtrl\$(Configuration)\ForexPAF.exe %25USERPROFILE%25\Documents\cAlgo\API\ForexPAF.exe
+copy C:\AlgoWorker\MarketChartCtrl\$(Configuration)\ForexPAF.pdb %25USERPROFILE%25\Documents\cAlgo\API\ForexPAF.pdb
+</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
