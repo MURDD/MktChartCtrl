@@ -349,7 +349,8 @@ namespace MarketChartCtrl
                     }
                     foreach (var rdr in el)
                     {
-                        rdr.Paint(this, graphics, i, graphIdx, startPoint, cvt, Colors, Scaling, el.GraphRect, ref TimeLines, true);
+                        if (rdr!=null)
+                            rdr.Paint(this, graphics, i, graphIdx, startPoint, cvt, Colors, Scaling, el.GraphRect, ref TimeLines, true);
                     }
 
                     graphIdx++;
